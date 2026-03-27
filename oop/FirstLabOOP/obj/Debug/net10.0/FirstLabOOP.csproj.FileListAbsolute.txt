@@ -1,0 +1,15 @@
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\FirstLabOOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\FirstLabOOP.AssemblyInfoInputs.cache
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\FirstLabOOP.AssemblyInfo.cs
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\FirstLabOOP.csproj.CoreCompileInputs.cache
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\FirstLabOOP.sourcelink.json
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\bin\Debug\net10.0\FirstLabOOP.exe
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\bin\Debug\net10.0\FirstLabOOP.deps.json
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\bin\Debug\net10.0\FirstLabOOP.runtimeconfig.json
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\bin\Debug\net10.0\FirstLabOOP.dll
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\bin\Debug\net10.0\FirstLabOOP.pdb
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\FirstLabOOP.dll
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\refint\FirstLabOOP.dll
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\FirstLabOOP.pdb
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\FirstLabOOP.genruntimeconfig.cache
+C:\Users\shata\Desktop\homework\oop\FirstLabOOP\obj\Debug\net10.0\ref\FirstLabOOP.dll
