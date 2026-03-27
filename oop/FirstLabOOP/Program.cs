@@ -3,14 +3,18 @@ class Program
 {
     static void Main()
     {
-        // Car c = new Car();
+        SportCar c = new SportCar();
         // c.carInfomation();
-        // c.PrintInfo();
+        c.SetCount(1);
+        c.PrintInfo();
+        
+        c.weight=3520;
+        c.categoriaCar();
     }
 }
 class Vehicle  
 {
-    private bool cityRoads;
+    private bool _cityRoads;
     public int wheels;
     public Vehicle()
     {
@@ -21,23 +25,25 @@ class Vehicle
         wheels=count;
        
     }
-    public void PrintInfo()
+    public virtual void PrintInfo()
     {
         if (wheels>0)
         {
             Console.WriteLine("подойдет для города");
-            cityRoads=true;
+            _cityRoads=true;
         }
         else
         {
             Console.WriteLine("не для города");
-            cityRoads=false;
+            _cityRoads=false;
         }   
         
     }
-    public int GetCount()
+    public void GetCityRoads()
     {
-        return wheels;
+        Console.WriteLine(_cityRoads);
+
+        // return cityRoads;
     }
     public void SetCount(int value)
     {
@@ -54,7 +60,7 @@ class Car: Vehicle
 {
     public int weight;
     public string brand;
-    private string categoria;
+    private string _categoria;
 
     public Car() : base()
     {
@@ -84,24 +90,42 @@ class Car: Vehicle
         }
 
     }
+
+    public override void PrintInfo()
+    {
+        base.PrintInfo();  // Вызов родительского метода
+        Console.WriteLine($"Количество колес: {wheels}");  // ← использование поля родителя
+        Console.WriteLine($"Марка: {brand}, Вес: {weight}");
+    }
+    public void GetCategoria()
+    {
+        Console.WriteLine(_categoria);
+    }
     public void categoriaCar()
     {
         if (weight>3500)
         {
-            Console.WriteLine("машина категории С");
-            categoria="C";
+            _categoria="C";
         }
         else
         {
-            Console.WriteLine("машина категории B");
-            categoria="B";
+            _categoria="B";
         }   
     }
 }
 
 class SportCar: Car
 {
-    private string brakingPerformance
+
+    public override void PrintInfo()
+    {
+        // Вызываем метод родительского класса Car
+        base.PrintInfo();
+        
+        // Используем поля из всех классов
+        Console.WriteLine($"Максимальная скорость: {maxSpeed} км/ч");
+    }    
+    private string _brakingPerformance
 ;
     public int maxSpeed;
 
@@ -114,6 +138,10 @@ class SportCar: Car
     {
         maxSpeed=count;
     }
+    public void GetBrakingPerformance()
+    {
+        Console.WriteLine(_brakingPerformance);
+    }
 
 
     public string tyresSpeedLimit{ get; set; }
@@ -122,17 +150,17 @@ class SportCar: Car
         if (maxSpeed<201)
         {
             Console.WriteLine("машина отлично затормозит");
-            brakingPerformance="класс A";
+            _brakingPerformance="класс A";
         }
         else if(maxSpeed<250)
         {
             Console.WriteLine("машина нормально затормозит");
-            brakingPerformance="класс B";
+            _brakingPerformance="класс B";
         } 
         else if(maxSpeed<300)
         {
             Console.WriteLine("машина не очень затормозит");
-            brakingPerformance="класс C";
+            _brakingPerformance="класс C";
         }   
     }
 }

@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shata\\Desktop\\homework\\oop\\FirstLabOOP\\FirstLabOOP.csproj": {}
+    "/Users/home/Desktop/golang/oop/FirstLabOOP/FirstLabOOP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shata\\Desktop\\homework\\oop\\FirstLabOOP\\FirstLabOOP.csproj": {
+    "/Users/home/Desktop/golang/oop/FirstLabOOP/FirstLabOOP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shata\\Desktop\\homework\\oop\\FirstLabOOP\\FirstLabOOP.csproj",
+        "projectUniqueName": "/Users/home/Desktop/golang/oop/FirstLabOOP/FirstLabOOP.csproj",
         "projectName": "FirstLabOOP",
-        "projectPath": "C:\\Users\\shata\\Desktop\\homework\\oop\\FirstLabOOP\\FirstLabOOP.csproj",
-        "packagesPath": "C:\\Users\\shata\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shata\\Desktop\\homework\\oop\\FirstLabOOP\\obj\\",
+        "projectPath": "/Users/home/Desktop/golang/oop/FirstLabOOP/FirstLabOOP.csproj",
+        "packagesPath": "/Users/home/.nuget/packages/",
+        "outputPath": "/Users/home/Desktop/golang/oop/FirstLabOOP/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\shata\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/home/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.103/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
