@@ -1,13 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-
+interface InfoClass
+{
+    void getInfo();
+}
+interface IIndexable
+{
+    int Count { get; }
+    string GetItem(int index);
+}
+interface ICircularCapable
+{
+    string Category { get; set; }
+    void ShowCircularTraversal();
+    double DefaultValue { get; set; }
+}
 class Program
 {
     static void Main()
     {
         // 1. Конструкторы
         Console.WriteLine("=== 1. Конструкторы ===\n");
-        CircularList collection = new Collection();
+        Collection collection = new CircularList();
         // Collection.
         collection.ShowAll();
         // Console.WriteLine("=== 1. Конструкторы ===\n");
@@ -63,10 +77,24 @@ class Program
         Console.WriteLine("\n✅ Инкапсуляция соблюдена");
     }
 }
-
-/// Базовый класс - Коллекция объектов
-class Collection
+abstract class AbstractCollection
 {
+    public abstract string CollectionType { get; set; }
+    public abstract void Clear();
+}
+/// Базовый класс - Коллекция объектов
+class Collection : AbstractCollection,InfoClass
+{
+    public override string CollectionType { get; set; } = "Обычная коллекция";
+    public override void Clear()
+    {
+        _items.Clear();
+        Console.WriteLine("Коллекция очищена");
+    }
+    public void getInfo()
+    {
+        Console.WriteLine($"MaxSize Collection: {_maxSize}\n а коллекция содержит {_items.Count}\n тип списка {CollectionType}");
+    }
     private int _maxSize;
     
     protected List<string> _items;
@@ -114,12 +142,22 @@ class Collection
 }
 
 /// Наследник - Список (расширяет базовую коллекцию)
-class SimpleList : Collection
+class SimpleList : Collection,InfoClass,IIndexable
 {
+    public override void Clear()
+    {
+        base.Clear();  // Вызываем родительский
+        Console.WriteLine($"  Список [{_category}] очищен");
+    }
+    public void getInfo()
+    {
+        Console.WriteLine($"категория: {_category}\n а коллекция содержит {_items.Count}\n тип списка {CollectionType}");
+    }
     private string _category;
     public SimpleList() : base()
     {
         _category = "Общий";
+        CollectionType = "Простой список";
     }
     
     public SimpleList(int maxSize) : base(maxSize)
@@ -157,8 +195,18 @@ class SimpleList : Collection
 }
 
 /// Наследник - Кольцевой список (элементы зациклены)
-class CircularList : SimpleList
+class CircularList : SimpleList,InfoClass,ICircularCapable
 {
+    public override void Clear()
+    {
+        base.Clear();
+        _currentIndex = 0;  // Сбрасываем индекс
+        Console.WriteLine("  Кольцевая структура сброшена");
+    }
+    public void getInfo()
+    {
+        Console.WriteLine($"данные индекса : {_currentIndex}\n а коллекция содержит {_items.Count}\n тип списка {CollectionType}"); 
+    }
     private double _defaultValue;
     
     private int _currentIndex;
@@ -167,6 +215,7 @@ class CircularList : SimpleList
     {
         _defaultValue = 0;
         _currentIndex = 0;
+        CollectionType = "Кольцевой список";
     }
     
     public CircularList(int maxSize) : base(maxSize)
